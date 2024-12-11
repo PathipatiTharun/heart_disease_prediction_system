@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-3xl font-extrabold text-blue-600 mb-6">Introduction to Heart Disease Prediction Model</h1>
+        <p class="text-gray-700 text-lg leading-relaxed mb-8">
+            The Lehme Model is a state-of-the-art prediction algorithm designed to assist in diagnosing health conditions
+            based on patient symptoms and clinical data. This model leverages advanced machine learning to analyze input
+            data and provide accurate predictions for various diseases.
+        </p>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Parameters Needed:</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li><strong>Height (cm):</strong> Patient's height in centimeters (50-250 cm).</li>
+                <li><strong>Weight (kg):</strong> Patient's weight in kilograms (20-200 kg).</li>
+                <li><strong>Temperature (°C):</strong> Body temperature in degrees Celsius (30-45 °C).</li>
+                <li><strong>Heart Rate (bpm):</strong> Beats per minute (40-200 bpm).</li>
+                <li><strong>Cholesterol (mg/dL):</strong> Cholesterol level in milligrams per deciliter (100-300 mg/dL).</li>
+                <li><strong>Blood Sugar (mg/dL):</strong> Blood sugar level in milligrams per deciliter (50-500 mg/dL).</li>
+                <li><strong>Systolic Pressure:</strong> Blood pressure's upper reading (80-200 mmHg).</li>
+                <li><strong>Diastolic Pressure:</strong> Blood pressure's lower reading (50-120 mmHg).</li>
+                <li><strong>Existing Conditions:</strong> Diabetes, Hypertension, High cholesterol, Asthma.</li>
+                <li><strong>Family History:</strong> Indication of heart disease in family history (Yes/No).</li>
+                <li><strong>Smoking Status:</strong> Never, Former, or Current smoker.</li>
+                <li><strong>Lab Status:</strong> Results such as high blood sugar, high cholesterol, low iron, or normal.</li>
+                <li><strong>Symptoms:</strong> Chest pain, dizziness, fatigue, nausea, palpitations, or shortness of breath.</li>
+            </ul>
+        </div>
+
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">How It Works:</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                The input parameters are processed and scaled to match the expected input format of the Lehme Model. The model
+                predicts a disease label, mapping it to a known health condition based on the provided data.
+            </p>
+        </div>
+
+        <a href="{% url 'lehme:predict' %}" class="inline-block bg-blue-600 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            Predict Now
+        </a>
+    </div>
+</div>
+
+{% endblock content %}
